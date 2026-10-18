@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaction Time Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="site-header">
+      <p class="eyebrow">Hogwarts Reflex Bench</p>
+      <h1>Reaction Time Lab</h1>
+    </header>
+
+    <!-- PAGE 1: Registration -->
+    <section id="registerScreen" class="stage-panel reg-card">
+      <h2>Participant Registration</h2>
+      <form id="registrationForm">
+        <input type="text" id="playerName" placeholder="Enter name" required />
+        <input type="text" id="studentId" placeholder="Enter Student ID" required />
+        <button type="submit" class="btn-primary">Register &amp; Play</button>
+      </form>
+    </section>
+
+    <!-- PAGE 2: Game -->
+    <main id="gameScreen" class="layout" hidden>
+      <section class="stage-panel">
+        <p class="player-line" id="playerLine"></p>
+<p class="target-line" id="targetLine"></p>
+        <div class="light-tree" id="lightTree">
+          <span class="light"></span><span class="light"></span><span class="light"></span>
+          <span class="light"></span><span class="light"></span>
+        </div>
+
+        <button type="button" class="click-zone" id="clickZone" data-phase="idle">
+          <img id="zoneImg" class="zone-img" alt="" hidden />
+          <span class="zone-message" id="zoneMessage">Press Start to begin</span>
+          <span class="zone-timer" id="zoneTimer"></span>
+        </button>
+
+        <div class="stage-controls">
+          <button type="button" class="btn-primary" id="startBtn">Start</button>
+          <button type="button" class="btn-primary" id="nextBtn" hidden>Next Participant</button>
+          <p class="hint">Space bar works too.</p>
+        </div>
+      </section>
+
+      <aside class="stats-panel">
+        <div class="panel-block">
+          <h2>Difficulty</h2>
+          <div class="segmented">
+            <button type="button" class="seg-btn is-active" data-difficulty="easy">Easy</button>
+            <button type="button" class="seg-btn" data-difficulty="medium">Medium</button>
+            <button type="button" class="seg-btn" data-difficulty="hard">Hard</button>
+          </div>
+        </div>
+
+        <div class="panel-block">
+          <h2>Attempts</h2>
+          <div class="stats-grid" id="attemptGrid"></div>
+        </div>
+
+        <div class="panel-block">
+          <h2>Best</h2>
+          <div class="stat-card is-best"><span class="stat-value" id="bestValue">—</span></div>
+          <p class="hint" id="saveStatus"></p>
+        </div>
+      </aside>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
