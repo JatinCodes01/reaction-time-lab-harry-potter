@@ -1,7 +1,7 @@
 # Reaction Time Lab: Harry Potter Edition
 ## 🪄 Gameplay Preview
 
-![Harry Potter Reaction Time Game](demo.gif)
+![Harry Potter Reaction Time Game](Demo.gif)
 A Harry Potter themed reaction time game built with HTML, CSS, JavaScript and a small Python server.
 
 ## How it works
